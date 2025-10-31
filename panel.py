@@ -10,7 +10,12 @@ from datetime import datetime, timedelta
 from scipy.stats import linregress
 
 # Configurar formato europeo
-locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
+import locale
+try:
+    locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
+except:
+    locale.setlocale(locale.LC_ALL, '')
+
 
 # Configuración de página
 st.set_page_config(layout="wide")
